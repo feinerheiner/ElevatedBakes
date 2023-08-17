@@ -1,0 +1,118 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}Invoice Detail {% endblock %}
+{% block body %}
+<a href="{% url 'generate_pdf' invoice.id %}" class="btn btn-primary btn-pdf">Generate PDF</a>
+<div class="invoice-container container">
+<!--    Top left section    -->
+    <div class="invoice-header">
+        <div class="top-left">
+            <div class="title-logo">
+<!--                <h1 class="title">Invoice</h1>-->
+                <img src="{% static 'logo/Logos-04.png' %}" alt="Logo" class="logo">
+            </div>
+<!--            <h1>Elevated Bakes</h1>-->
+            <p>3371 South Burkhill Lane</p>
+            <p>Syracuse Utah 84075</p>
+            <p>(801)628-0059</p>
+            <p>elevated.bakes@gmail.com</p>
+            <p>elevatedbakes.com</p>
+        </div>
+<!--    Top right section   -->
+        <div class="top-right">
+            <h2 class="title">Invoice</h2>
+            <p>Date: {{invoice.date }}</p>
+            <p>Invoice #: {{ invoice.pk|stringformat:"04d" }}</p>
+            <p>Due Date: {{ invoice.due_date }}</p>
+        </div>
+    </div>
+    <hr>
+
+<!--    Middle section     -->
+    <div class="middle">
+        <!--    Middle left section    -->
+            <div class="middle-left">
+                <h2>Bill To</h2>
+                <p>{{ invoice.name }}</p>
+                <p>{{ invoice.address1 }}</p>
+                <p>{{ invoice.address2 }}</p>
+                <p>{{ invoice.city }} {{ invoice.state }} {{ invoice.zip }}</p>
+                <p>{{ invoice.phone }}</p>
+                <p>{{ invoice.email }}</p>
+            </div>
+        <!--    Middle right section    -->
+            <div class="middle-right">
+                <h2>Delivery Type</h2>
+                <p>{{ invoice.delivery_type }}</p>
+                <h3>Delivery Address:</h3>
+                <p>{{ invoice.delivery_address }}</p>
+                <p>{{ invoice.delivery_city }} {{ invoice.delivery_state }} {{ invoice.delivery_zip }}</p>
+            </div>
+    </div>
+
+
+<!--    Itemized description section    -->
+    <table class="itemized-description">
+        <tr>
+            <th>Item</th>
+            <th>Description</th>
+            <th>Cost</th>
+        </tr>
+        <tr>
+            <td>Cake</td>
+            <td>{{ invoice.cake_flavor }}</td>
+            <td>${{ invoice.cake_cost }}</td>
+        </tr>
+        <tr>
+            <td>Filling</td>
+            <td>{{ invoice.filling_flavor }}</td>
+            <td>${{ invoice.filling_cost }}</td>
+        </tr>
+        <tr>
+            <td>Delivery</td>
+            <td>{{ invoice.delivery_type }}</td>
+            <td>${{ invoice.delivery_cost }}</td>
+        </tr>
+        <tr>
+            <td>Setup</td>
+            <td></td>
+            <td>${{ invoice.setup_cost }}</td>
+        </tr>
+        <tr>
+            <td>Cake Topper</td>
+            <td></td>
+            <td>${{ invoice.cake_topper_cost }}</td>
+        </tr>
+        <tr>
+            <td>Other</td>
+            <td>{{ invoice.other_description }}</td>
+            <td>${{ invoice.other_cost }}</td>
+        </tr>
+        <tr class="totals">
+            <td>Subtotal</td>
+            <td></td>
+            <td>${{ invoice.subtotal }}</td>
+        </tr>
+        <tr class="totals">
+            <td>Tax</td>
+            <td></td>
+            <td>${{ invoice.calculatedTax }}</td>
+        </tr>
+        <tr class="totals">
+            <td>Total</td>
+            <td></td>
+            <td>${{ invoice.total }}</td>
+        </tr>
+        <tr class="totals">
+            <td>Deposit</td>
+            <td>Deposit is due 2 weeks before due date</td>
+            <td>${{ invoice.deposit }}</td>
+        </tr>
+    </table>
+    <hr>
+</div>
+
+
+
+{% endblock %}

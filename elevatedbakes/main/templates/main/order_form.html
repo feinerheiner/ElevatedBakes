@@ -1,0 +1,84 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Order Form {% endblock %}
+{% block body %}
+
+<div class="container">
+    <h1>Please fill out this form and click the submit button to compleat your order</h1>
+    <div class="row">
+        <div class="col-md-5"></div>
+        <div class="col-md-7">
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-md-2">{{ form.name.label_tag }}</div>
+                    <div class="col-md-8">{{ form.name }}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">{{ form.phone.label_tag }}</div>
+                    <div class="col-md-5">{{ form.phone }}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">{{ form.email.label_tag }}</div>
+                    <div class="col-md-5">{{ form.email }}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">{{ form.address1.label_tag }}</div>
+                    <div class="col-md-5">{{ form.address1 }}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">{{ form.address2.label_tag }}</div>
+                    <div class="col-md-5">{{ form.address2 }}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">{{ form.city.label_tag }}</div>
+                    <div class="col-md-5">{{ form.city }}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">{{ form.state.label_tag }}</div>
+                    <div class="col-md-5">{{ form.state }}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">{{ form.zip.label_tag }}</div>
+                    <div class="col-md-5">{{ form.zip }}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">{{ form.event_type.label_tag }}</div>
+                    <div class="col-md-5">{{ form.event_type }}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">{{ form.event_date.label_tag }}</div>
+                    <div class="col-md-5">{{ form.event_date }}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">{{ form.cake_flavor.label_tag }}</div>
+                    <div class="col-md-5">{{ form.cake_flavor }}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">{{ form.filling_flavor.label_tag }}</div>
+                    <div class="col-md-5">{{ form.filling_flavor }}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">{{ form.servings.label_tag }}</div>
+                    <div class="col-md-5">{{ form.servings }}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">{{ form.design.label_tag }}</div>
+                    <div class="col-md-5">{{ form.design }}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">{{ form.message.label_tag }}</div>
+                    <div class="col-md-5">{{ form.message }}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">{{ form.design_image.label_tag }}</div>
+                    <div class="col-md-5">{{ form.design_image }}</div>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

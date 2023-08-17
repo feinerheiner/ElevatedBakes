@@ -1,0 +1,29 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Invoice List {% endblock %}
+{% block body %}
+<!--<h1>This is the Invoice Page</h1>-->
+<div class="container">
+    <a href="{% url 'invoice_form' %}" class="btn btn-primary">Add Invoice</a>
+    <table class="invoice-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Date</th>
+                <th>Name</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for invoice in invoice_list %}
+                <tr>
+                    <td><a href="{% url 'invoice_detail' invoice.pk %}">{{ invoice.pk|stringformat:"04d" }}</a></td>
+                    <td>{{ invoice.date }}</td>
+                    <td>{{ invoice.name }}</td>
+                    <td>{{ invoice.email }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

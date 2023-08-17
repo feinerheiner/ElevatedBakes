@@ -1,0 +1,22 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Gallery {% endblock %}
+{% block body %}
+<h1 class="container gallery-btn">Welcome to my gallery!</h1>
+<div class="gallery-btn">
+    {% if user.is_authenticated %}
+    <a class="btn btn-primary" href="{% url 'gallery_form' %}">Add Image</a>
+{% endif %}
+</div>
+
+<div class="container gallery-container">
+    {% for item in gallery_list %}
+        <div class="gallery-image">
+            <a href="{% url 'gallery_detail' item.pk %}">
+                <img src="{{item.image.url}}" alt="{{item.name}}" class="gallery-image">
+            </a>
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,160 @@
+.col-md-3 {
+    text-align: right
+}
+body{
+    background-color: #FFD7CE;
+}
+nav{
+    background-color: #346876;
+}
+.gallery-image{
+    max-width: 300px;
+    max-height: 200px;
+    margin: 10px;
+}
+.gallery-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.gallery-btn{
+    text-align: center;
+}
+.detail-image{
+    max-width: 800px;
+    max-height: 600px;
+    margin: 20px;
+}
+.container.cake-details {
+        display: flex;
+        align-items: center;
+}
+.details{
+    flex: 1;
+}
+.button-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.contact-button {
+    display: inline-block;
+    width: 250px;
+    height: 150px;
+    background-size: cover;
+    text-align: center;
+    line-height: 150px;
+    font-size: 18px;
+    color: #2E6878;
+    text-decoration: none;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+}
+.order-button:hover {
+    background-color: #2E6878;
+    color: #F9F7F1;
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
+}
+.message-button:hover {
+    background-color: #2E6878;
+    color: #F9F7F1;
+}
+.order-button {
+    /*background-image: url('elevatedbakes/media/logo/orderform.jpg');*/
+    background-color: #df8180;
+}
+
+.message-button {
+    /*background-image: url('elevatedbakes/media/logo/messageform.jpg');*/
+    background-color: #FEAE9C;
+}
+.contact-container{
+    justify-content: space-around;
+    margin: 50px;
+}
+.invoice-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+}
+.invoice-table th, invoice-table td {
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+.invoice-table th {
+    background-color: #f2f2f2;
+}
+/*Style for the Invoice detail page*/
+.btn-pdf{
+    margin-top: 40px;
+}
+.invoice-container{
+    text-align: center;
+    margin-top: 50px;
+    background-color: white;
+}
+.title{
+    font-size: 50px;
+    margin: 0px;
+}
+.title-logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.logo{
+    width: 100px;
+    height: auto;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+.invoice-header{
+    display: flex;
+    justify-content: space-between;
+}
+.top-left{
+    text-align: left;
+}
+.top-right{
+    text-align: right;
+    margin-top: 40px;
+}
+.middle{
+    display: flex;
+    justify-content: space-between;
+}
+.middle-left{
+    text-align: left;
+}
+.middle-right{
+    text-align: right;
+}
+.itemized-description{
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+.itemized-description th, .itemized-description td {
+    padding: 8px;
+    border: 1px solid black;
+    text-align: left;
+}
+.itemized-description th{
+    text-align: center;
+}
+.lower-section{
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+}
+.totals{
+    font-weight: bold;
+}
+
+

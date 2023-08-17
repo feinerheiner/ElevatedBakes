@@ -1,0 +1,13 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Gallery Detail {% endblock %}
+{% block body %}
+{% csrf_token %}
+<div class="container cake-details">
+    <img src="{{cake.image.url}}" alt="{{cake.name}}" class="detail-image">
+    <div class="details">
+        <h1>{{cake.name}}</h1>
+        <p>{{cake.description}}</p>
+    </div>
+</div>
+{% endblock %}

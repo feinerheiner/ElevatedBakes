@@ -1,0 +1,38 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Order Form {% endblock %}
+{% block body %}
+<h1>This is the message_form Page</h1>
+
+<div class="container">
+    <h1>To send me a message please fill out the form below and click the submit button.</h1>
+    <div class="row">
+        <div class="col-md-5"></div>
+        <div class="col-md-7">
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-md-2">{{ form.name.label_tag }}</div>
+                    <div class="col-md-8">{{ form.name }}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">{{ form.phone.label_tag }}</div>
+                    <div class="col-md-5">{{ form.phone }}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">{{ form.email.label_tag }}</div>
+                    <div class="col-md-5">{{ form.email }}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">{{ form.message.label_tag }}</div>
+                    <div class="col-md-5">{{ form.message }}</div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

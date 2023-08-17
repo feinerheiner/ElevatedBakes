@@ -1,0 +1,21 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Contact Us {% endblock %}
+{% block body %}
+<div class="container">
+    <div class="contact-container">
+        <h1>THANKS FOR VISITING US!!</h1>
+        <p>We would love to hear from you. Please click one of the links below to either send us a message or
+            create an order.
+        </p>
+    </div>
+
+
+    <div class="button-container">
+        <a href="{% url 'order_form' %}" class="contact-button order-button">Order Now</a>
+        <a href="{% url 'message_form' %}" class="contact-button message-button">Send a Message</a>
+    </div>
+
+</div>
+
+{% endblock %}
